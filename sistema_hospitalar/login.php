@@ -56,7 +56,8 @@ if(isset($_POST['login'])){
                                 <div class="alert alert-danger">
                                     <?php 
                                     if(isset($error['admin'])){
-                                        $show = $error['admin'];
+                                        $sh= $error['admin'];
+                                        $show = "<h4 class='alert alert-danger'>$sh</h4>";
 
                                         echo $show;
 
