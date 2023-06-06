@@ -1,6 +1,6 @@
 <h1 align="center">
   <br>
-  <img src="[https://ibb.co/Wc4tfQ7](https://i.ibb.co/YtFZh6J/Fastbunny.jpg)" alt="Fast Bunny" height="125" width="125">
+  <img src="https://i.ibb.co/YtFZh6J/Fastbunny.jpg" alt="Fast Bunny" height="125" width="125">
   <br><br>
 </h1>
 
