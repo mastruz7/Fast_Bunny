@@ -10,10 +10,14 @@ Desenvolvimento de Software Multiplataforma como requisito parcial para obtenç�
 da aprovação semestral em disciplinas chaves.
 </p>
 <p align="center">
- <a href="#objetivo">Objetivo</a> •
+ <a href="#objetivo">Objetivo do sistema</a> •
  <a href="#tecnologias">Tecnologias</a> • 
  <a href="#contribuicao">Contribuição</a> • 
  <a href="#autor">Autores</a>
 </p>
 
+
+<h4 align="center"> 
+	🚧  React Select 🚀 Em construção...  🚧
+</h4>
 
