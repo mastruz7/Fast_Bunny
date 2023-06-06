@@ -15,7 +15,7 @@ da aprovação semestral em disciplinas chaves.
  <a href="#autor">Autores</a>
 </p>
 
-<h3 align="center">Objetivo do sistema</h3>
+## Objetivo do sistema
 <p align="center">O objetivo geral do projeto Fast Bunny é desenvolver um sistema de gestão para hospitais e consultórios médicos, com foco em proporcionar ergonomia e velocidade no tratamento de dados de consulta e na administração de informações médicas. O sistema visa contribuir para a melhoria da eficiência e qualidade dos serviços de saúde, alinhando-se ao Objetivo de Desenvolvimento Sustentável (ODS) da ONU relacionado à "Saúde e bem-estar".</p>
 
 <h3 align="center">Público alvo</h3>
