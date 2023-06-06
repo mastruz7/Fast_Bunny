@@ -23,10 +23,14 @@ da aprovação semestral em disciplinas chaves.
 
 ## Autores
 <p align="left">
- <a href="#Carla">Carla Justino</a> •
- <a href="#Giovani">Giovani Ortega</a> •
- <a href="#Joao">João Castro</a> •
- <a href="#Lucas">Lucas Theodoro</a>•
+ <a href="#Carla">Carla Justino</a>
+ <br>
+ <a href="#Giovani">Giovani Ortega</a>
+ <br>
+ <a href="#Joao">João Castro</a>
+ <br>
+ <a href="#Lucas">Lucas Theodoro</a>
+  <br>
  <a href="#Matheus">Matheus da Costa</a>
 </p>
 
