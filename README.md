@@ -10,14 +10,18 @@ Desenvolvimento de Software Multiplataforma como requisito parcial para obtenç�
 da aprovação semestral em disciplinas chaves.
 </p>
 <p align="center">
- <a href="#objetivo">Objetivo do sistema</a> •
- <a href="#tecnologias">Tecnologias</a> • 
- <a href="#contribuicao">Contribuição</a> • 
+ <a href="#objetivo">Objetivo do sistema</a> 
+<br>
+ <a href="#tecnologias">Tecnologias</a> 
+<br>
+ <a href="#contribuicao">Contribuição</a>
+<br>
  <a href="#autor">Autores</a>
 </p>
 
+## **Objetivo**
 
 <h4 align="center"> 
-	🚧  Projeto em construção...  🚧
+	🚧  Projeto em construção  🚧
 </h4>
 
