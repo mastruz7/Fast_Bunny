@@ -18,6 +18,6 @@ da aprovação semestral em disciplinas chaves.
 
 
 <h4 align="center"> 
-	🚧  React Select 🚀 Em construção...  🚧
+	🚧  Projeto em construção...  🚧
 </h4>
 
