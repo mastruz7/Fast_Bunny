@@ -19,8 +19,8 @@ da aprovação semestral em disciplinas chaves.
  <a href="#autor">Autores</a>
 </p>
 
-<h3 align="center">Objetivo do sistema</h3>
-<p align="center">O sistema Fast Bunny busca melhorar a eficiência, a qualidade e a segurança dos serviços de saúde, contribuindo para o bem-estar dospacientes e o sucesso das instituições médicas.</p>
+##<h3 align="center">Objetivo do sistema</h3>
+<p align="center">O sistema Fast Bunny busca melhorar a eficiência, a qualidade e a segurança dos serviços de saúde, contribuindo para o bem-estar dos pacientes e o sucesso das instituições médicas.</p>
 
 <h4 align="center"> 
 	🚧  Projeto em construção  🚧
