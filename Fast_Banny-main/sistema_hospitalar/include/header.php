@@ -35,14 +35,14 @@
                         <li class="nav-item"><a href="#" class="nav-item">'.$user.'</a></li>
                         <li class="nav-item"><a href="logout.php" class="nav-item">logout</a></li>
                         
-                        '
+                        ';
 
                     }else{
                         echo '
                         <li class="nav-item"><a href="login.php" class="nav-item">Administração</a></li>
                         <li class="nav-item"><a href="" class="nav-item">Médico</a></li>
                         <li class="nav-item"><a href="" class="nav-item">Paciente</a></li>
-                        '
+                        ';
                     }
                 ?>
                 

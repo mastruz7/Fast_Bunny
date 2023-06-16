@@ -1,37 +1,92 @@
 <?php
-session_start();
-include("include/conexao.php");
 
-if(isset($_POST['login'])){
-    $username = $_POST['uname'];
-    $password = $_POST['pass'];
+include('include/includes.php');
 
-    $error = array();
-    if (empty($username)){
-        $error['admin'] = "Enter Username";
+if($_SERVER["REQUEST_METHOD"] == "POST"){
 
-    }else if (empty($password)){
-        $error['admin'] = "Enter Password";
-    }
-    if (count($error)==0){
-        $query = "SELECT * FROM admin where username='' and password='$password'";
+    session_start();
+    
+    $email=$_POST['useremail'];
+    $password=$_POST['userpassword'];
+    
+    $select = WebUser::getWebUser($email);
+    
+    #$select= $database->query("select * from webuser where email='$email'");
+    if($select->login_email == $email){
 
-        $result = mysqli_query( $connect,$query);
+        if ($select->login_tipo == 'P'){
+            $login = Paciente::pacienteLogin($email, $password);
+            #$login = $select_paciente->query("select * from patient where pemail='$email' and ppassword='$password'");
+            if ($login->paciente_email == $email and $login->paciente_senha == $password){
 
-        if (mysqli_num_rows($result)== 1){
-            echo "<script>alert('you have login as an admin')</script>";
-            $_SESSION['admin'] = $usernames[$username];
-           header("location:admin/index.php");
-           exit();
+                //   Patient dashbord
+                $_SESSION['user']=$email;
+                $_SESSION['usertype']='P';
+                $_SESSION['loggedin'] = TRUE;
 
-        }else{
-            echo "<script>alert('Invalid username')</script>";
+                
+                header('location: paciente/index.php');
+
+            }else{
+                echo "<script>alert('Invalid Credentials')</script>";
+            }
+
+        }elseif($select->login_tipo == 'A'){
+            $login = Admin::adminLogin($email, $password);
+            #$login = $database->query("select * from admin where aemail='$email' and apassword='$password'");
+            if ($login->admin_email == $email and $login->admin_senha == $password){
+
+
+                //   Admin dashbord
+                $_SESSION['user']=$email;
+                $_SESSION['usertype']='A';
+                $_SESSION['loggedin'] = TRUE;
+                
+                header('location: admin/index.php');
+
+            }else{
+                echo "<script>alert('Invalid Credentials')</script>";
+                
+            }
+
+
+        }elseif($select->login_tipo == 'M'){
+            $login = Medico::medicoLogin($email, $password);
+            #$login = $database->query("select * from doctor where docemail='$email' and docpassword='$password'");
+            if ($login->medico_email == $email and $login->medico_senha == $password){
+
+
+                //   doctor dashbord
+                $_SESSION['user']=$email;
+                $_SESSION['usertype']='M';
+                $_SESSION['loggedin'] = TRUE;
+                
+                header('location: medico/index.php');
+
+            }else{
+                $_SESSION['loggedin'] = FALSE;
+                echo "<script>alert('Invalid Credentials')</script>";
+
+            }
+
         }
-
+        
+    }else{
+        echo "<script>alert('Nenhuma conta foi encontrada!')</script>";
     }
+
+
+
+
+
+
+    
+}else{
+    echo "&nbsp";
 }
 
 ?>
+
 <!DOCTYPE html>
 <htm>
     <head>
@@ -52,33 +107,15 @@ if(isset($_POST['login'])){
                     <div class="col-md-6 jumbotron">
                         <img src="/img/admin_login.jpg" class="col-md-12">
                         <form method="post" class="my-2">
-
-                                <div class="alert alert-danger">
-                                    <?php 
-                                    if(isset($error['admin'])){
-                                        $sh= $error['admin'];
-                                        $show = "<h4 class='alert alert-danger'>$sh</h4>";
-
-                                        echo $show;
-
-                                    }else{
-                                        $show ="";
-                                    }
-
-                                    echo $show;
-                                    
-
-                                    ?>
-                                </div>
                             <div class="form-group">
-                                <label>username</label>
-                                <input type="text" name="uname" class="form-control" 
-                                autocomplete="off" placeholder="enter username">
+                                <label>E-mail</label>
+                                <input type="email" name="useremail" id="useremail" class="form-control" 
+                                autocomplete="off" placeholder="enter e-mail">
                             </div>
                             <br>
                             <div class="form-group">
-                                <label>password</label>
-                                <imput type="password" name="pass" class="form-control">
+                                <label>Senha</label>
+                                <input type="password" name="userpassword" id="userpassword" class="form-control">
                             </div>
 
                             <input type="submit" name="login" class="btn btn-success" value="login">
