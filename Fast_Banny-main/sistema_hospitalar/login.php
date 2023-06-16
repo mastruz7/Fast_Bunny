@@ -10,16 +10,14 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     $password=$_POST['userpassword'];
     
     $select = WebUser::getWebUser($email);
-    
-    #$select= $database->query("select * from webuser where email='$email'");
+
     if($select->login_email == $email){
 
         if ($select->login_tipo == 'P'){
             $login = Paciente::pacienteLogin($email, $password);
-            #$login = $select_paciente->query("select * from patient where pemail='$email' and ppassword='$password'");
+
             if ($login->paciente_email == $email and $login->paciente_senha == $password){
 
-                //   Patient dashbord
                 $_SESSION['user']=$email;
                 $_SESSION['usertype']='P';
                 $_SESSION['loggedin'] = TRUE;
@@ -33,11 +31,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
         }elseif($select->login_tipo == 'A'){
             $login = Admin::adminLogin($email, $password);
-            #$login = $database->query("select * from admin where aemail='$email' and apassword='$password'");
+
             if ($login->admin_email == $email and $login->admin_senha == $password){
 
-
-                //   Admin dashbord
                 $_SESSION['user']=$email;
                 $_SESSION['usertype']='A';
                 $_SESSION['loggedin'] = TRUE;
@@ -52,11 +48,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
         }elseif($select->login_tipo == 'M'){
             $login = Medico::medicoLogin($email, $password);
-            #$login = $database->query("select * from doctor where docemail='$email' and docpassword='$password'");
+
             if ($login->medico_email == $email and $login->medico_senha == $password){
 
-
-                //   doctor dashbord
                 $_SESSION['user']=$email;
                 $_SESSION['usertype']='M';
                 $_SESSION['loggedin'] = TRUE;
