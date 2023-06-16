@@ -1,5 +1,6 @@
 <?php
-session_start();
+include("../include/validate.php");
+
 ?>
 <!doctype html>
 <html>
@@ -12,13 +13,13 @@ session_start();
                 <div class="row">
                     <div class="col-md-2" style="margin-left: -30px;">
                         <?php
-                        include("sidenav.php");
+                        include("sidnav.php");
                          ?>
                     </div>
                     <div class="col-md-10">
                         <h4 class="my-2">Admin Dashboard</h4>
 
-                        <div class="col-md-12 my-1>
+                        <div class="col-md-12 my-1">
                             <div class="row">
                             <div class="col-md-3 bg-success   mx-2" style="height: 130px;">   
                                 <div class="col-md-12">
