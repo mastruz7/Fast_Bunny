@@ -1,8 +1,8 @@
 <?php
 
-require_once 'Database/Database.php';
+require_once 'Database.php';
 
-class Especielidade{
+class Especialidade{
 
     private $setConn;
 
@@ -26,7 +26,6 @@ class Especielidade{
     public function Atualizar(){
         return $this->setConn->update('especialidade_id = '.$this->id,[
                                                                         'especialidade_nome' => $this->especialidade_nome,
-                                                                        'data_cadastro'      => $this->data_cadastro
                                                                         ]);
     }
         
