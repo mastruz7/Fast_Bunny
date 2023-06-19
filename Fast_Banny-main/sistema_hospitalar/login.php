@@ -1,6 +1,7 @@
 <?php
 
-include('include/includes.php');
+include_once('include/header.php');
+include_once('include/includes.php');
 
 if($_SERVER["REQUEST_METHOD"] == "POST"){
 
@@ -10,14 +11,16 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     $password=$_POST['userpassword'];
     
     $select = WebUser::getWebUser($email);
-
+    
+    #$select= $database->query("select * from webuser where email='$email'");
     if($select->login_email == $email){
 
         if ($select->login_tipo == 'P'){
             $login = Paciente::pacienteLogin($email, $password);
-
+            #$login = $select_paciente->query("select * from patient where pemail='$email' and ppassword='$password'");
             if ($login->paciente_email == $email and $login->paciente_senha == $password){
 
+                //   Patient dashbord
                 $_SESSION['user']=$email;
                 $_SESSION['usertype']='P';
                 $_SESSION['loggedin'] = TRUE;
@@ -31,9 +34,11 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
         }elseif($select->login_tipo == 'A'){
             $login = Admin::adminLogin($email, $password);
-
+            #$login = $database->query("select * from admin where aemail='$email' and apassword='$password'");
             if ($login->admin_email == $email and $login->admin_senha == $password){
 
+
+                //   Admin dashbord
                 $_SESSION['user']=$email;
                 $_SESSION['usertype']='A';
                 $_SESSION['loggedin'] = TRUE;
@@ -41,16 +46,18 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 header('location: admin/index.php');
 
             }else{
-                echo "<script>alert('Invalid Credentials')</script>";
+                echo "<script>alert('Usuário ou Senha inválidos')</script>";
                 
             }
 
 
         }elseif($select->login_tipo == 'M'){
             $login = Medico::medicoLogin($email, $password);
-
+            #$login = $database->query("select * from doctor where docemail='$email' and docpassword='$password'");
             if ($login->medico_email == $email and $login->medico_senha == $password){
 
+
+                //   doctor dashbord
                 $_SESSION['user']=$email;
                 $_SESSION['usertype']='M';
                 $_SESSION['loggedin'] = TRUE;
@@ -59,7 +66,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
             }else{
                 $_SESSION['loggedin'] = FALSE;
-                echo "<script>alert('Invalid Credentials')</script>";
+                echo "<script>alert('Usuário ou Senha inválidos')</script>";
 
             }
 
@@ -68,64 +75,46 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     }else{
         echo "<script>alert('Nenhuma conta foi encontrada!')</script>";
     }
-
-
-
-
-
-
-    
+  
 }else{
     echo "&nbsp";
 }
 
+
+
 ?>
+     <section id="register" data-stellar-background-ratio="3">
+          <div class="container">
+               <div class="row">
 
-<!DOCTYPE html>
-<htm>
-    <head>
-        <title>Pagina de Login da Administração</title>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+                    <div class="col-md-6 col-sm-6">
+                         <img src="images/login.jpg" class="img-responsive" alt="">
+                    </div>
 
-    </head>
-    <body style="background-image: url(/img/hospital.jpg);background-repeat:no-repeat;background-size:cover;">
-        <?php
-        include "include/header.php";
-        ?>
-        <div style="margin-top: 40px;"></div>
-        <div class="container">
-            <div class="col-md-12">
-                <div class="row">
-                    <div class="col-md-3"> </div>
-                    <div class="col-md-6 jumbotron">
-                        <img src="/img/admin_login.jpg" class="col-md-12">
-                        <form method="post" class="my-2">
-                            <div class="form-group">
-                                <label>E-mail</label>
-                                <input type="email" name="useremail" id="useremail" class="form-control" 
-                                autocomplete="off" placeholder="enter e-mail">
-                            </div>
-                            <br>
-                            <div class="form-group">
-                                <label>Senha</label>
-                                <input type="password" name="userpassword" id="userpassword" class="form-control">
-                            </div>
+                    <div class="col-md-6 col-sm-6">
+                         <form id="register-form" role="form" method="post">
 
-                            <input type="submit" name="login" class="btn btn-success" value="login">
-                        
+                              <div class="section-title wow fadeInUp" data-wow-delay="0.4s">
+                                   <h2>Login</h2>
+                              </div>
+
+                              <div class="wow fadeInUp" data-wow-delay="0.8s">
+                                   <div class="col-md-12 col-sm-12">
+                                        <label for="email">E-mail</label>
+                                        <input type="email" class="form-control" id="useremail" name="useremail" placeholder="Insira seu e-mail" required>
+                                   </div>
+
+                                   <div class="col-md-12 col-sm-12">
+                                        <label for="senha">Senha</label>
+                                        <input type="password" name="userpassword" id="userpassword" class="form-control" placeholder="Insira sua senha" required>
+                                   </div>
+                                        <button type="submit" class="form-control" id="cf-submit" name="submit">Enviar</button>
+                                   </div>
+                              </div>
                         </form>
                     </div>
-                    <div class="col-md-3"> 
 
-                    </div>
-
-                </div>
-
-                </div>
-
-            </div>
-        </div>
-
-    </body>
-</htm>
+               </div>
+          </div>
+     </section>
+<?php include_once('include/footer.php'); ?>
