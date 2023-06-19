@@ -48,7 +48,7 @@ include_once('../include/includes.php');
                <div class="collapse navbar-collapse">
                     <ul class="nav navbar-nav navbar-right">
                          <li><a href="index.php" class="smoothScroll">Home</a></li>
-                         <li><a href="#team" class="smoothScroll">Médicos</a></li>
+                         <li><a href="#team" class="smoothScroll">Novo Usuario</a></li>
                          <li><a href="#google-map" class="smoothScroll">Contato</a></li>
                          <li class="register-btn"><a href="registro.php">Registrar-se</a></li>
                          <li class="register-btn"><a href="login.php">Login</a></li>

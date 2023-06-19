@@ -6,7 +6,7 @@
                          <div class="footer-thumb"> 
                               <h4 class="wow fadeInUp" data-wow-delay="0.4s">Informações de contato</h4>
                               <div class="contact-info">
-                                   <p><i class="fa fa-phone"></i> 0800-777-7000 </p>
+                                   <p><i class="fa fa-phone"></i> 0800-777-7800 </p>
                                    <p><i class="fa fa-envelope-o"></i> admin@fastbunny.com </p>
                               </div>
                          </div>
