@@ -3,7 +3,7 @@
                <div class="row">
 
                     <div class="col-md-8 col-sm-8">
-                         <div class="footer-thumb"> 
+                         <div class="footer-thumb" id="contato"> 
                               <h4 class="wow fadeInUp" data-wow-delay="0.4s">Informações de contato</h4>
                               <div class="contact-info">
                                    <p><i class="fa fa-phone"></i> 0800-777-7000 </p>

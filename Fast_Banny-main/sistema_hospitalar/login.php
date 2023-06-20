@@ -20,13 +20,11 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             #$login = $select_paciente->query("select * from patient where pemail='$email' and ppassword='$password'");
             if ($login->paciente_email == $email and $login->paciente_senha == $password){
 
-                //   Patient dashbord
                 $_SESSION['user']=$email;
                 $_SESSION['usertype']='P';
                 $_SESSION['loggedin'] = TRUE;
 
-                
-                header('location: paciente/index.php');
+                header('location: paciente.php');
 
             }else{
                 echo "<script>alert('Invalid Credentials')</script>";

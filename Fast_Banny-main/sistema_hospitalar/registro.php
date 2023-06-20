@@ -46,7 +46,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
                                    <div class="col-md-12 col-sm-12">
                                         <label for="tel">Telefone para contato</label>
-                                        <input type="tel" class="form-control" id="paciente_tel" name="paciente_tel" placeholder="DDD+Número" pattern="[0-9]{11}" required>
+                                        <input type="tel" class="form-control" id="paciente_tel" name="paciente_tel" placeholder="DDD+Número" pattern="[0-9]{11}" maxlength="11" required>
                                    </div>
 
                                    <div class="col-md-12 col-sm-12">
