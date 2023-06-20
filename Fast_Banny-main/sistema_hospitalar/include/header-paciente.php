@@ -1,7 +1,12 @@
 <?php 
 
 session_start();
-include_once('../include/includes.php'); 
+include_once('includes.php'); 
+include_once('validate.php');
+
+
+#$paciente = Paciente::getPaciente($paciente_id);
+
 
 ?>
 <!DOCTYPE html>
@@ -14,12 +19,12 @@ include_once('../include/includes.php');
      <meta http-equiv="X-UA-Compatible" content="IE=Edge">
      <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-     <link rel="stylesheet" href="../css/bootstrap.min.css">
-     <link rel="stylesheet" href="../css/font-awesome.min.css">
-     <link rel="stylesheet" href="../css/animate.css">
-     <link rel="stylesheet" href="../css/owl.carousel.css">
-     <link rel="stylesheet" href="../css/owl.theme.default.min.css">
-     <link rel="stylesheet" href="../css/main.css">
+     <link rel="stylesheet" href="css/bootstrap.min.css">
+     <link rel="stylesheet" href="css/font-awesome.min.css">
+     <link rel="stylesheet" href="css/animate.css">
+     <link rel="stylesheet" href="css/owl.carousel.css">
+     <link rel="stylesheet" href="css/owl.theme.default.min.css">
+     <link rel="stylesheet" href="css/main.css">
 
 </head>
 <body id="top" data-spy="scroll" data-target=".navbar-collapse" data-offset="50">
@@ -48,9 +53,9 @@ include_once('../include/includes.php');
                <div class="collapse navbar-collapse">
                     <ul class="nav navbar-nav navbar-right">
                          <li><a href="index.php" class="smoothScroll">Home</a></li>
-                         <li><a href="#team" class="smoothScroll">Novo Usuario</a></li>
-                         <li><a href="#google-map" class="smoothScroll">Contato</a></li>
-                         <li class="logout-btn"><a href="logout.php">Logout</a></li>
+                         <li><a href="#contato" class="smoothScroll">Contato</a></li>
+                         <li class="register-btn"><a href="consulta.php">Consulta</a></li>
+                         <li class="logout-btn"><a href="include/logout.php">Logout</a></li>
                     </ul>
                </div>
 

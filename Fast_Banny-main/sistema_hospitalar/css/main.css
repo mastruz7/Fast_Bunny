@@ -347,6 +347,19 @@
     background-color: transparent;
   }
 
+  .navbar-default .navbar-nav li.logout-btn a {
+    background: #D62828;
+    border-radius: 3px;
+    color: #ffffff;
+    font-weight: 600;
+    padding-top: 12px;
+    padding-bottom: 12px;
+  }
+
+  .navbar-default .navbar-nav li.logout-btn {
+    margin: 3px 0 0 20px;
+  }
+
   #home h1 {
     color: #ffffff;
     padding-bottom: 10px;

@@ -53,7 +53,7 @@ class Medico{
     }
         
     public static function getMedico($id){
-      return (new Database('Medico'))->select('id = '.$id)
+      return (new Database('Medico'))->select('medico_id = '.$id)
                                     ->fetchObject(self::class);
     }
         
